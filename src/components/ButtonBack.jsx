@@ -8,6 +8,7 @@ function ButtonBack() {
     <Button
       type={"back"}
       onClick={(e) => {
+        //This button shouldn't cause form submit
         e.preventDefault();
         navigate(-1);
       }}
