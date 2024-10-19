@@ -9,7 +9,9 @@ function Sidebar() {
       <Logo />
       <AppNav />
 
-      {/*Like children prop */}
+      {/*Like children prop 
+      RIGHT HERE IS WHERE it will render CityList, CountryList, City and Form back from routes in App component
+      */}
       <Outlet />
 
       <footer className={styles.footer}>

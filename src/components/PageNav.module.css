@@ -20,7 +20,10 @@
   font-weight: 600;
 }
 
-/* CSS Modules feature */
+/* CSS Modules feature
+  Nav link in PageNav component defines which is active
+  and gives "active" class 
+*/
 .nav a:global(.active) {
   color: var(--color-brand--2);
 }

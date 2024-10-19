@@ -17,18 +17,23 @@ function App() {
     <CitiesProvider>
       <BrowserRouter>
         <Routes>
+          {/*Default - when path is nothing*/}
           <Route index element={<Homepage />} />
+
           <Route path="products" element={<Product />} />
           <Route path="pricing" element={<Pricing />} />
           <Route path="login" element={<Login />} />
           <Route path="app" element={<AppLayout />}>
-            {/*Re-direct like default */}
+            {/*Renders child based on route path */}
+
+            {/*Re-direct */}
             <Route index element={<Navigate replace to="cities" />} />
 
-            {/*Nested routes */}
             <Route path="cities" element={<CityList />} />
+
             {/*:id  => name of the part of the URL which will useParams use */}
             <Route path="cities/:id" element={<City />} />
+
             <Route path="countries" element={<CountryList />} />
             <Route path="form" element={<Form />} />
           </Route>

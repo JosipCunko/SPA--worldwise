@@ -3,6 +3,9 @@ import { createContext, useEffect, useState, useContext } from "react";
 const CitiesContext = createContext();
 const URL = "http://localhost:8000/cities";
 
+/**Provide context to children
+ * @value cities, isLoading, currentCity, getCityInfo
+ */
 function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,6 +27,8 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
+  /** @param cityId
+   */
   async function getCityInfo(id) {
     try {
       setIsLoading(true);
@@ -45,12 +50,12 @@ function CitiesProvider({ children }) {
     </CitiesContext.Provider>
   );
 }
-
+/**Custom hook to give easier access to context value  */
 function useCities() {
   const context = useContext(CitiesContext);
   if (context === undefined)
     throw new Error(
-      "CItiesContext was used outside of Cities.Provider element"
+      "CitiesContext was used outside of Cities.Provider element"
     );
   return context;
 }
