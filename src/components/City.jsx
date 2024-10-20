@@ -22,7 +22,7 @@ function City() {
       getCityInfo(id);
     },
     //dont include getCity -- explanation in next section
-    [id]
+    [id, getCityInfo]
   );
 
   const { cityName, emoji, date, notes } = currentCity;
