@@ -6,12 +6,13 @@
 }
 
 .product section {
-  width: clamp(80rem, 80%, 90rem);
+  width: clamp(20rem, 80%, 90rem);
   margin: 6rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 7rem;
   align-items: center;
+  justify-items: center;
 }
 
 .product img {
@@ -25,10 +26,31 @@
 }
 
 .product p {
-  font-size: 1.6rem;
+  font-size: clamp(1rem, 20vw, 1.6rem);
   margin-bottom: 2rem;
 }
 
 .product section a {
   margin-top: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .product section {
+    gap: 2rem;
+    width: clamp(20rem, 100%, 90rem);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .product {
+    margin: 0;
+  }
+  .product section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .product section img {
+    width: 50vw;
+    justify-self: start;
+  }
 }

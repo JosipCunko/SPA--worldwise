@@ -14,6 +14,17 @@
   align-items: center;
   gap: 1.6rem;
 }
+@media only screen and (max-width: 710px) {
+  .user {
+    top: 51vh;
+    right: 1rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .user {
+    padding: 0.4rem 0.8rem;
+  }
+}
 
 .user img {
   border-radius: 100px;

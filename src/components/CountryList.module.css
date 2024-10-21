@@ -3,9 +3,13 @@
   height: 65vh;
   list-style: none;
   overflow: hidden;
+  overflow-y: scroll;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: start;
   gap: 1.6rem;
+}
+.countryList::-webkit-scrollbar {
+  width: 0;
 }
